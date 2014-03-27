@@ -1,3 +1,40 @@
 // Place all the styles related to the statuses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.status{
+	border-bottom: dashed 1px #777;
+	padding:5px 0;
+}
+.status p{
+	margin: 4px 0px;
+}
+
+.status .admin{
+	display:none;	
+}
+.status.hover{
+		background-color:#FAF7FA;
+}
+
+.status.hover .admin{
+	display:inline;	
+}
+
+.admin > a:visited, .admin > a:active, .admin > a:link {
+	color:#0AA;
+	font-weight:800;
+	font-size:0.8em;
+}
+.admin > a:hover{
+	background:transparent;
+	color:#F90;
+	font-weight:800;
+	font-size:0.8em;
+}
+.time > a:active, .time > a:hover, .time > a:link, .time > a:visited{
+	background:transparent;
+	font-weight:800;
+	font-size:0.8em;
+	color:#022;
+	text-decoration:none;
+}
