@@ -1,28 +1,36 @@
 <div class="page-header">
-  <h1>All of the Statuses</h1>
+  <h1>All of the Statuses<small>'cos if ya dont know now ya know</small></h1>
 </div>
-    <div class="panel panel-header">
-    <button type="button" class="btn-lg btn-success">
+<div class="panel panel-success">
+    <div class="panel-heading">
+    <button type="button" class=" nob btn-lg btn-success">
+    <span class="glyphicon glyphicon-pencil"></span>
     <%= link_to 'New Status', new_status_path %>
     </button>
     </div>
     <div class=" panel-body">
     <% @statuses.each do |status| %>
       
-      <div class="status">
-        <strong><%= status.name %></strong>
-        <p><%= status.content %></p>
-        <div class="meta">
-        <span class="time"><%= link_to time_ago_in_words(status.created_at), status %></span>
-        
+      <div class="bg-info status">
+        <blockquote class="blockquote text-info">
+        <p>
+        <em><span class="glyphicon glyphicon-comment"></span> <%= status.content %> </em>
         <span class="admin">
-          <%= link_to 'Edit', edit_status_path(status) %>
-          <%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '  Edit  ', edit_status_path(status) %>
+          <%= link_to '  Destroy  ', status, method: :delete, data: { confirm: 'Are you sure?' } %>
           </span>
-      </div>
+
+      <footer class="meta">
+        <cite><span class="glyphicon glyphicon-user"></span> <%= status.name %>
+        <span class="time"><%= link_to time_ago_in_words(status.created_at), status %> </span> 
+           </cite></footer>
+      
+     
+      </blockquote>
       </div>
       
     <% end %>
+    </div>
 </div>
 <br>
 
